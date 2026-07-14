@@ -1,0 +1,241 @@
+/* ── Feature-card list ─────────────────────────────────────── */
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ── Feature card wrapper ──────────────────────────────────── */
+.project-feature-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+}
+
+.project-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--accent-rgb, 157, 92, 245), 0.35);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(157,92,245,0.12);
+}
+
+.project-feature-card.reverse {
+  direction: rtl;
+}
+.project-feature-card.reverse > * {
+  direction: ltr;
+}
+
+/* ── Screenshot panel ──────────────────────────────────────── */
+.pfc__image-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pfc__image-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pfc__screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.project-feature-card:hover .pfc__screenshot {
+  transform: scale(1.03);
+}
+
+.pfc__image-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+/* ── Content panel ─────────────────────────────────────────── */
+.pfc__content {
+  padding: 36px 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Badge */
+.pfc__badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+/* Title + subtitle */
+.pfc__title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.pfc__subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: -6px 0 0;
+  letter-spacing: 0.02em;
+}
+
+/* Description */
+.pfc__desc {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Highlights */
+.pfc__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pfc__highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.pfc__bullet {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 6px;
+  opacity: 0.85;
+}
+
+/* Tags */
+.pfc__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.pfc__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.btn-code, .btn-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-code {
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.btn-code:hover {
+  background: var(--tag-border);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.pfc__btn-github:hover {
+  box-shadow: 0 4px 20px rgba(157, 92, 245, 0.25);
+  color: var(--text-primary);
+}
+
+.pfc__coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Shared tag style (reused from old CSS) */
+.project-card__tag {
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .project-feature-card {
+    grid-template-columns: 1fr;
+  }
+  .project-feature-card.reverse {
+    direction: ltr;
+  }
+  .pfc__image-wrap {
+    min-height: 220px;
+    padding: 14px;
+  }
+  .pfc__content {
+    padding: 26px 24px 24px;
+  }
+  .pfc__title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pfc__title { font-size: 20px; }
+  .pfc__actions { flex-direction: column; align-items: flex-start; }
+}
