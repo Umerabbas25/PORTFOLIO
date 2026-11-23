@@ -56,7 +56,7 @@ export default function Experience() {
                     <h3 className="timeline__role">Machine Learning Engineer Intern</h3>
                     <div className="timeline__company">
                       <MdWork size={14} color="var(--violet-light)" />
-                      FlyRank AI
+                      Dafi Labs
                     </div>
                   </div>
                   <span className="timeline__badge">
