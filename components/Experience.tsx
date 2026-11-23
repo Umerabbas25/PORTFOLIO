@@ -72,7 +72,11 @@ export default function Experience() {
 
                 <ul className="timeline__duties">
                   {[
-                   
+                  'Building LangChain agentic workflows that automate multi-step content research and SEO optimization tasks.',
+"Implementing RAG pipelines with FAISS vector stores and Groq's Llama 3.1 API to automate document question answering.",
+'Deploying FastAPI-based AI microservices to production with the engineering team, exposing automation workflows as reliable APIs.',
+'Automating multilingual and Roman-Urdu text processing with NLP pipelines for tokenization, normalization, and embedding generation.',
+'Automating content ranking and relevance scoring with end-to-end pipelines built on XGBoost and transformer-based models.',
                   ].map((duty, i) => (
                     <li key={i}>
                       <span className="duty-dot" />
