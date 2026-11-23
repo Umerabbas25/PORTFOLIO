@@ -9,7 +9,7 @@ const ASIDE_CARDS = [
     Icon: HiAcademicCap,
     color: '#9D5CF5',
     title: 'COMSATS University Islamabad',
-    desc: 'BS Artificial Intelligence · Lahore Campus\n7th Semester · Expected Graduation 2026',
+    desc: 'BS Artificial Intelligence · Lahore Campus\n8th Semester · Expected Graduation 2026',
   },
   {
     Icon: MdWorkHistory,
@@ -66,7 +66,7 @@ export default function Experience() {
                 </div>
 
                 <div className="timeline__meta">
-                  <span><FiCalendar size={12} /> Jun 2026 – Present</span>
+                  <span><FiCalendar size={12} /> Jun 2026 – Aug 2026</span>
                   <span><FiGlobe size={12} /> Remote · Internship</span>
                 </div>
 
