@@ -119,8 +119,8 @@ export default function About() {
             </p>
             <p className="about__para">
               Currently gaining industry experience as a{' '}
-              <strong className="highlight">Machine Learning Engineer Intern at FlyRank AI</strong>,
-              building production-grade ML pipelines and RAG systems.
+              <strong className="highlight">AI Automation Intern at Dafi Labs</strong>,
+              building AI Automations and RAG systems.
             </p>
 
             <div className="about__stats">
