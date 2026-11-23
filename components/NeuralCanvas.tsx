@@ -43,7 +43,21 @@ export default function NeuralCanvas() {
       }));
     }
 
+    let isVisible = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(draw);
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(wrap);
+
     function draw() {
+      if (!isVisible) return;
       ctx!.clearRect(0, 0, W, H);
 
       // Edges
@@ -118,6 +132,7 @@ export default function NeuralCanvas() {
     draw();
 
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(rafId);
       window.removeEventListener('resize', resize);
       wrap.removeEventListener('mousemove', onMouseMove);
